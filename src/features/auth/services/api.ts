@@ -1,6 +1,7 @@
 import { envs } from '../../../config/envs';
 import { getFetcher, postFetcher } from '../../utils/fetcher';
-import { type LoginCredentials, type LoginResponse } from './types';
+import type { LoginCredentials, LoginResponse } from './types';
+
 
 
 

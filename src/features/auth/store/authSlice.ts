@@ -63,7 +63,7 @@ export const authSlice = createSlice({
       })
       .addCase(login.rejected, (state, action) => {
         state.status = 'failed'
-        state.error = action.payload ?? 'erroro desconocido'
+        state.error = action.payload ?? 'error desconocido'
       })
       .addCase(renewToken.pending, (state) => {
         state.status = 'loading'

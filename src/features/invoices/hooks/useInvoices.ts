@@ -27,6 +27,8 @@ export const useInvoices = ({ size, page, search, branch  }: Props) => {
 
   useEffect(() => {
 
+    // if(loading) return
+
     setLoading(true)
 
     const controller = new AbortController()
@@ -54,7 +56,7 @@ export const useInvoices = ({ size, page, search, branch  }: Props) => {
       })
 
     return () => {
-      controller.abort()
+      // controller.abort()
     }
 
   }, [size, page, search, branch])

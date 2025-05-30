@@ -11,7 +11,7 @@ export const usePagination = () => {
 
   const [page, setPage] = useState(1)
 
-  const [size, setSize] = useState(10)
+  const [size, setSize] = useState(20)
 
   const [search, setSearch] = useState('');
 

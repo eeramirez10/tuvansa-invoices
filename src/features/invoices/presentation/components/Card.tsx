@@ -10,12 +10,13 @@ interface Props {
   status: string
   invoiceDate: string
   amount: string
-  downloadPdf: (filename: string, type:FileType) => void
-  downloadXml: (filename: string, type:FileType) => void
+  clientname?: string
+  downloadPdf: (filename: string, type: FileType) => void
+  downloadXml: (filename: string, type: FileType) => void
 }
 
 
-export const Card: React.FC<Props> = ({ folio, status, invoiceDate, amount, downloadPdf,downloadXml  }) => {
+export const Card: React.FC<Props> = ({ folio, status, invoiceDate, amount, clientname, downloadPdf, downloadXml }) => {
 
 
 
@@ -31,10 +32,20 @@ export const Card: React.FC<Props> = ({ folio, status, invoiceDate, amount, down
         <div className='flex justify-between items-start mb-3'>
           <div>
             <span className='text-xs font-medium text-gray-500'>Folio</span>
-            <h3 className='text-lg font-bold text-gray-800'>{folio}</h3>
+            <h3 className='text-md font-bold text-gray-800'>{folio}</h3>
           </div>
           <span className='border rounded-full text-sm px-1 py-1 bg-green-500 text-white '>Verificada {status}</span>
         </div>
+
+        {
+          clientname &&
+
+          <div className=' mb-3'>
+            <span className='text-xs font-medium text-gray-500'>Cliente</span>
+            <h3 className='text-md font-bold text-gray-800' >{clientname}</h3>
+          </div>
+        }
+
 
         <div className='flex justify-between items-start mb-4'>
           <div>
@@ -53,7 +64,7 @@ export const Card: React.FC<Props> = ({ folio, status, invoiceDate, amount, down
               className='flex items-center justify-center border rounded-md px-4 py-2 w-full text-yellow-500 border-yellow-500 hover:bg-yellow-50' >
               <i className='fas fa-file-pdf mr-3 '></i>  PDF
             </button>
-            <button 
+            <button
               onClick={() => downloadXml(filename, 'xml')}
               className='border rounded-md px-4 py-2 w-full text-yellow-500 border-yellow-500 hover:bg-yellow-50 '>
               <i className='fas fa-file-code mr-3 '></i>XML

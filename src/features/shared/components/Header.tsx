@@ -17,8 +17,8 @@ export const Header: React.FC<Props> = ({ userInfo }) => {
           <i className='fas fa-file-invoice text-blue-500  text-2xl mr-3'></i>
           <h1 className='text-xl font-bold text-gray-800'>Descarga Facturas</h1>
         </div>
-        <div className='flex items-center space-x-4'>
-          <div className='relative'>
+        <div className='flex items-center space-x-4 '>
+          <div className='relative flex '>
             <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
               <i className='fas fa-user text-gray-400'></i>
             </div>

@@ -7,10 +7,8 @@ import { Search } from '../components/Search'
 import { Visualitation } from '../components/Visualitation'
 import { Loader } from '../../../shared/components/Loader'
 import { Card } from '../components/Card'
-
 import { usePagination } from '../../../shared/hooks/usePagination'
 import { useDownloadFile } from '../../../shared/hooks/useDownloadFile'
-
 
 
 
@@ -58,6 +56,8 @@ export const Invoices = () => {
 
       <Search handleSearch={hadleSearch} />
 
+      {/* <FilterPanel /> */}
+
 
       <Visualitation total={size} setTotal={handleSize} />
 
@@ -79,6 +79,7 @@ export const Invoices = () => {
                 <Card
                   key={item.invoiceNumber}
                   folio={item.invoiceNumber}
+                  clientname={item.client}
                   status={item.statusCfd.toString()}
                   invoiceDate={item.invoiceDate}
                   amount={item.totalAmount}
@@ -92,20 +93,22 @@ export const Invoices = () => {
       </div>
 
 
-      <div className=' 
+      <div className=" 
+
           fixed              
-          bottom-5          
+          w-full
+          bottom-5         
           left-1/2            
           transform 
           -translate-x-1/2 
           z-50                          
           flex items-center justify-center
-        '
+        "
       >
 
         <Paginator
           currentPage={page}
-          totalPages={7}
+          totalPages={8}
           onPageChange={handlePage}
         />
 

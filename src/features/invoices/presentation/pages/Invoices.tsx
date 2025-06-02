@@ -19,7 +19,7 @@ export const Invoices = () => {
 
   const { invoicesList, loading } = useInvoices({ size, search, page, branch })
 
-  const { downloadFile, currentPath, type, pdfUrl, error, loading: fileLoading, } = useDownloadFile()
+  const { downloadFile, currentPath, type, pdfUrl, error, loading: fileLoading, downloadPdf } = useDownloadFile()
 
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -121,7 +121,7 @@ export const Invoices = () => {
         pdfUrl={pdfUrl}
         error={error}
         loading={fileLoading}
-      />
+        downloadPdf={downloadPdf} />
 
 
     </>

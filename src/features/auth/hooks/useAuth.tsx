@@ -26,7 +26,6 @@ const useAuth = () => {
 
   const isAuthenticated = status === 'succeeded'
 
-  console.log(user)
 
 
   const handleLoginValues = (name: string, value: string) => {

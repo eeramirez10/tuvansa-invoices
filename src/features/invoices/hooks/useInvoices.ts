@@ -4,21 +4,16 @@ import type { InvoicesResponse } from '../services/types'
 
 
 
-
-
-
 interface Props {
-
   size: number
   page: number
   search: string
   branch?: string
-
 }
 
-export const useInvoices = ({ size, page, search, branch  }: Props) => {
+export const useInvoices = ({ size, page, search, branch }: Props) => {
 
- 
+
   const [loading, setLoading] = useState(false)
 
   const [invoicesList, setInvoicesList] = useState<InvoicesResponse>()
@@ -26,8 +21,9 @@ export const useInvoices = ({ size, page, search, branch  }: Props) => {
 
 
   useEffect(() => {
+    
 
-    // if(loading) return
+    if(!branch) return
 
     setLoading(true)
 
